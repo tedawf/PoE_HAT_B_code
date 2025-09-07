@@ -50,13 +50,13 @@ class POE_HAT_B:
     def GET_Pihole_Stats(self):
         try:
             # Try Pi-hole API endpoint
-            url = "http://172.22.22.2/api/stats/summary"
+            url = "http://localhost/api/stats/summary"
             response = requests.get(url, timeout=2)
             data = response.json()
 
-            queries_today = data.get("dns_queries_today", 0)
-            ads_blocked_today = data.get("ads_blocked_today", 0)
-            ads_percentage_today = data.get("ads_percentage_today", 0)
+            queries_today = data["queries"]["total"]
+            ads_blocked_today = data["queries"]["blocked"]
+            ads_percentage_today = data["queries"]["percent_blocked"]
 
             return queries_today, ads_blocked_today, ads_percentage_today
         except:

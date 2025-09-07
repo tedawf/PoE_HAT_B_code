@@ -1,0 +1,11 @@
+# MacOS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+
+# C
+*.o
+main
+bin/

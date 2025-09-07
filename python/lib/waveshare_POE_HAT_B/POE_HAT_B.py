@@ -50,7 +50,8 @@ class POE_HAT_B:
     def GET_Pihole_Stats(self):
         try:
             # Try Pi-hole API endpoint
-            response = requests.get("http://localhost/admin/api.php", timeout=2)
+            url = "http://172.22.22.2/api/stats/summary"
+            response = requests.get(url, timeout=2)
             data = response.json()
 
             queries_today = data.get("dns_queries_today", 0)

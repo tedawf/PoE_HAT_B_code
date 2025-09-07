@@ -1,4 +1,4 @@
-RPi.GPIO
 smbus2
-numpy
 pillow
+requests
+psutil
